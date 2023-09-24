@@ -1,0 +1,13 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { parseUrl } from './parse-url';
+// export const prerender = true;
+const { success } = parseUrl.safeParse(Astro.params);
+if(!success) {
+  return Astro.redirect('/')
+}
+---
+
+<Layout title="tururu">
+  <h1>nem quero</h1>
+</Layout>
