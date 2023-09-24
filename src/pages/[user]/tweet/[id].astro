@@ -1,13 +1,15 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
-import { parseUrl } from './parse-url';
-// export const prerender = true;
-const { success } = parseUrl.safeParse(Astro.params);
-if(!success) {
-  return Astro.redirect('/')
+import Layout from "@/layouts/Layout.astro";
+import { parseUrl } from "./parse-url";
+
+const res = parseUrl.safeParse(Astro.params);
+if (!res.success) {
+  return Astro.redirect("/");
 }
+
+const { id } = res.data;
 ---
 
 <Layout title="tururu">
-  <h1>nem quero</h1>
+  <h1>Tweet {id}</h1>
 </Layout>

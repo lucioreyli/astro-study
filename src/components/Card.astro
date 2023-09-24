@@ -1,11 +1,26 @@
 ---
-type Props = { title: string; body: string; href: string };
+import { Image } from "astro:assets";
+type Props = { title: string; body: string; href: string; images: string[] };
 
-const { title, href } = Astro.props;
+const { title, href, body, images } = Astro.props;
 ---
 
 <li class="bg-white dark:bg-black">
   <a href={href}>
     {title}
+    {
+      images.map((img) => (
+        <Image
+          src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
+          width="130"
+          height="130"
+          alt="tweet image"
+        />
+      ))
+    }
+
+    <p>
+      {body}
+    </p>
   </a>
 </li>

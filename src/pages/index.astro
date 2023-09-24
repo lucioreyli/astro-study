@@ -1,6 +1,7 @@
 ---
-import Card from "../components/Card.astro";
-import Layout from "../layouts/Layout.astro";
+import { tweets } from "@/constants/tweets";
+import Card from "@/components/Card.astro";
+import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="Can't say">
@@ -8,7 +9,17 @@ import Layout from "../layouts/Layout.astro";
     class="m-auto p-4 w-[800px] max-w-[calc(100% - 2rem)] text-white text-xl"
   >
     <ul class="space-y-3">
-      <Card body="hi" href="/a" title="Mete bala" />
+      {
+        tweets.map((i, idx) => (
+          <Card
+            body={i.tweet}
+            href={`${i.user.user}/tweet/${idx + 1}`}
+            title={`Tweet ${idx + 1}`}
+            images={i.photos}
+          />
+        ))
+      }
     </ul>
   </main>
 </Layout>
+ ../constants/tweets
