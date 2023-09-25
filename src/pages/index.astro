@@ -29,6 +29,7 @@ import Icon from "@/icons/Icon.astro";
 <script>
   const handleClick = () => {
     console.log("hi", "hi");
+    Astro.redirect("/404");
   };
   const btn = document.getElementById("reply");
   btn?.addEventListener("click", handleClick);

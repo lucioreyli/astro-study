@@ -1,12 +1,12 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Themes from "astro-themes";
+import SiteLayout from "./SiteLayout.astro";
 
 type Props = { title: string };
 
 const { title } = Astro.props;
 const theme = Astro.cookies.get("theme");
-console.log("theme", theme);
 ---
 
 <!doctype html>
@@ -28,13 +28,17 @@ console.log("theme", theme);
     <ViewTransitions />
   </head>
   <body>
-    <slot />
+    <SiteLayout>
+      <slot />
+    </SiteLayout>
     <style is:global is:inline>
       :root {
         --background: #ffffff;
         --foreground: #000000;
         --primary: #1d9bf0;
         --muted-foreground: #71767b;
+        --gray: #00004d;
+        --border: #eff3f4;
       }
 
       .dark,
@@ -43,6 +47,8 @@ console.log("theme", theme);
         --foreground: #e7e9ea;
         --primary: #1d9bf0;
         --muted-foreground: #71767b;
+        --gray: #00004d;
+        --border: #eff3f4;
       }
 
       html {
@@ -50,30 +56,19 @@ console.log("theme", theme);
         background-color: var(--background);
         color: var(--foreground);
       }
-    </style>
-    <script>
-      // console.log("hi");
-      // const toggleTheme = (
-      //   event = window.matchMedia("(prefers-color-scheme: dark)"),
-      // ) => {
-      //   const theme = event?.matches ? "dark" : "light";
 
-      //   if (theme === "light") {
-      //     document.documentElement.classList.remove("dark");
-      //   } else {
-      //     document.documentElement.classList.add("dark");
-      //   }
-      //   // window.localStorage.setItem("theme", theme);
-      // };
-      // toggleTheme();
-      // window
-      //   .matchMedia("(prefers-color-scheme: dark)")
-      //   .addEventListener(
-      //     "change",
-      //     (e) => (console.log(e.matches) || true) && toggleTheme(),
-      //   );
+      * {
+        border: 1px solid red;
+      }
+
+      html,
+      body {
+        height: 100vh;
+      }
+    </style>
+    <script is:inline>
       document.addEventListener("astro:after-swap", () =>
-        document.dispatchEvent(new CustomEvent("set-theme", {})),
+        document.dispatchEvent(new CustomEvent("set-theme")),
       );
     </script>
   </body>

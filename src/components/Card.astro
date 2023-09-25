@@ -6,7 +6,7 @@ const { title, href, body, images } = Astro.props;
 ---
 
 <li>
-  <a href={href}>
+  <div>
     <h1 transition:name="title">
       {title}
     </h1>
@@ -21,8 +21,16 @@ const { title, href, body, images } = Astro.props;
         />
       ))
     }
-    <p>
+    <button id="google">google</button>
+    <p class="text-base">
       {body}
     </p>
-  </a>
+  </div>
 </li>
+<script is:inline>
+  const btn = document.getElementById("google");
+  btn?.addEventListener("click", () => {
+    console.log("hi");
+    window.location.href = "/lucioreyli/tweet/1";
+  });
+</script>
