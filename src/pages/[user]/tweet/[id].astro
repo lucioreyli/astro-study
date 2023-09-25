@@ -1,15 +1,32 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { parseUrl } from "./parse-url";
+import { tweets } from "@/constants/tweets";
+import { Image } from "astro:assets";
 
+// checks if tweet exists
 const res = parseUrl.safeParse(Astro.params);
-if (!res.success) {
-  return Astro.redirect("/");
-}
-
+if (!res.success) return Astro.redirect("/");
 const { id } = res.data;
+const tweet = tweets[id - 1];
+if (!tweet) return Astro.redirect("/");
+
+const { photos: images } = tweet;
 ---
 
-<Layout title="tururu">
-  <h1>Tweet {id}</h1>
+<Layout title="Tweet">
+  <main class="m-auto p-4 w-[800px] max-w-[calc(100% - 2rem)] text-xl">
+    <h1 transition:name="title">Tweet {id}</h1>
+    {
+      images.map((img, idx) => (
+        <Image
+          transition:name={`img-${idx}`}
+          src={`https://pbs.twimg.com/media/${img}?format=webp&name=large`}
+          width="400"
+          height="400"
+          alt="tweet image"
+        />
+      ))
+    }
+  </main>
 </Layout>

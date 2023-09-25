@@ -14,6 +14,9 @@ dependencies:
   astro:
     specifier: ^3.1.2
     version: 3.1.2
+  astro-themes:
+    specifier: ^0.2.4
+    version: 0.2.4(astro@3.1.2)
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
@@ -1247,6 +1250,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /astro-themes@0.2.4(astro@3.1.2):
+    resolution: {integrity: sha512-8MUrH4QgOtAmR1RjsERsOFzPhVHTfHRiAi5dCufWsRZCzH11Z+EeHUTCjQl+jDqmRaE7ICP5hLXgC8pGIR/4kA==}
+    peerDependencies:
+      astro: '*'
+    dependencies:
+      astro: 3.1.2
+    dev: false
 
   /astro@3.1.2:
     resolution: {integrity: sha512-9rlKyk6Qmw50Pc188+ey7JAEYBsJGh5an46AXGPMHIdEkH6YOc4b2z9Rr+TNF8QmM/U+C2ZQFRVQyCKU4i8/pg==}

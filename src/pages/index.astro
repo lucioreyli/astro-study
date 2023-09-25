@@ -2,12 +2,16 @@
 import { tweets } from "@/constants/tweets";
 import Card from "@/components/Card.astro";
 import Layout from "@/layouts/Layout.astro";
+import Reply from "@/icons/x.svg?raw";
+import Icon from "@/icons/Icon.astro";
 ---
 
 <Layout title="Can't say">
-  <main
-    class="m-auto p-4 w-[800px] max-w-[calc(100% - 2rem)] text-white text-xl"
-  >
+  <button id="reply" class="">
+    <Icon name="person" class="w-8 h-8 text-blue-400" />
+    <svg set:html={Reply} class="w-8 h-8" />
+  </button>
+  <main class="m-auto p-4 w-[800px] max-w-[calc(100% - 2rem)] text-xl">
     <ul class="space-y-3">
       {
         tweets.map((i, idx) => (
@@ -22,4 +26,10 @@ import Layout from "@/layouts/Layout.astro";
     </ul>
   </main>
 </Layout>
- ../constants/tweets
+<script>
+  const handleClick = () => {
+    console.log("hi", "hi");
+  };
+  const btn = document.getElementById("reply");
+  btn?.addEventListener("click", handleClick);
+</script>

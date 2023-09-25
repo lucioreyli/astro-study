@@ -1,7 +1,12 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+import Themes from "astro-themes";
+
 type Props = { title: string };
 
 const { title } = Astro.props;
+const theme = Astro.cookies.get("theme");
+console.log("theme", theme);
 ---
 
 <!doctype html>
@@ -12,16 +17,64 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
+    <Themes />
+    <ViewTransitions />
   </head>
   <body>
     <slot />
+    <style is:global is:inline>
+      :root {
+        --background: #ffffff;
+        --foreground: #000000;
+        --primary: #1d9bf0;
+        --muted-foreground: #71767b;
+      }
+
+      .dark,
+      [data-theme="dark"] {
+        --background: #000;
+        --foreground: #e7e9ea;
+        --primary: #1d9bf0;
+        --muted-foreground: #71767b;
+      }
+
+      html {
+        font-family: "Lato", sans-serif;
+        background-color: var(--background);
+        color: var(--foreground);
+      }
+    </style>
+    <script>
+      // console.log("hi");
+      // const toggleTheme = (
+      //   event = window.matchMedia("(prefers-color-scheme: dark)"),
+      // ) => {
+      //   const theme = event?.matches ? "dark" : "light";
+
+      //   if (theme === "light") {
+      //     document.documentElement.classList.remove("dark");
+      //   } else {
+      //     document.documentElement.classList.add("dark");
+      //   }
+      //   // window.localStorage.setItem("theme", theme);
+      // };
+      // toggleTheme();
+      // window
+      //   .matchMedia("(prefers-color-scheme: dark)")
+      //   .addEventListener(
+      //     "change",
+      //     (e) => (console.log(e.matches) || true) && toggleTheme(),
+      //   );
+      document.addEventListener("astro:after-swap", () =>
+        document.dispatchEvent(new CustomEvent("set-theme", {})),
+      );
+    </script>
   </body>
 </html>
-<style is:global is:inline>
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
-  }
-</style>
