@@ -1,7 +1,7 @@
 ---
 type Props = astroHTML.JSX.SVGAttributes & { name: string };
 const { name } = Astro.props;
-const { default: I, class } = await import(`./${name}.svg?raw`);
+const { default: I } = await import(`./${name}.svg?raw`);
 ---
 
 <div set:html={I} {...Astro.props} />

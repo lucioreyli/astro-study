@@ -2,35 +2,25 @@
 import { Image } from "astro:assets";
 type Props = { title: string; body: string; href: string; images: string[] };
 
-const { title, href, body, images } = Astro.props;
+const { title, body, images } = Astro.props;
 ---
 
-<li>
-  <div>
-    <h1 transition:name="title">
-      {title}
-    </h1>
-    {
-      images.map((img, idx) => (
-        <Image
-          transition:name={`img-${idx}`}
-          src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
-          width="130"
-          height="130"
-          alt="tweet image"
-        />
-      ))
-    }
-    <button id="google">google</button>
-    <p class="text-base">
-      {body}
-    </p>
-  </div>
+<li class="w-full block bg-background transition-all hover:bg-muted">
+  <h1 transition:name="title">
+    {title}
+  </h1>
+  {
+    images.map((img, idx) => (
+      <Image
+        transition:name={`img-${idx}`}
+        src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
+        width="130"
+        height="130"
+        alt="tweet image"
+      />
+    ))
+  }
+  <span class="block">
+    {body}
+  </span>
 </li>
-<script is:inline>
-  const btn = document.getElementById("google");
-  btn?.addEventListener("click", () => {
-    console.log("hi");
-    window.location.href = "/lucioreyli/tweet/1";
-  });
-</script>

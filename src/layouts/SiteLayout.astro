@@ -1,7 +1,9 @@
 ---
-
+import LeftBar from "@/components/LeftBar.astro";
 ---
 
-<div class="">
+<div class="grid sm:grid-cols-4 md:grid-cols-7 divide-border">
+  <LeftBar />
   <slot />
+  <!-- <LeftBar /> -->
 </div>

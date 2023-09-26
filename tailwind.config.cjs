@@ -7,11 +7,12 @@ module.exports = {
 			colors: {
 				background: "var(--background)",
 				gray: "var(--gray)",
+				border: "var(--border)",
 				foreground: "var(--foreground)",
 				primary: "var(--primary)",
 				muted: {
 					foreground: "var(--muted-foreground)",
-					DEFAULT: "var(--muted-foreground)"
+					DEFAULT: "var(--muted)"
 				}
 			}
 		},

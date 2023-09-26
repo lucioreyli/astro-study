@@ -6,7 +6,6 @@ import SiteLayout from "./SiteLayout.astro";
 type Props = { title: string };
 
 const { title } = Astro.props;
-const theme = Astro.cookies.get("theme");
 ---
 
 <!doctype html>
@@ -34,21 +33,23 @@ const theme = Astro.cookies.get("theme");
     <style is:global is:inline>
       :root {
         --background: #ffffff;
-        --foreground: #000000;
+        --foreground: #101518;
         --primary: #1d9bf0;
+        --muted: #f6f6f6;
         --muted-foreground: #71767b;
         --gray: #00004d;
-        --border: #eff3f4;
+        --border: #ecf1f2;
       }
 
       .dark,
       [data-theme="dark"] {
         --background: #000;
-        --foreground: #e7e9ea;
+        --foreground: #e2e6e7;
         --primary: #1d9bf0;
+        --muted: #0c0c0c;
         --muted-foreground: #71767b;
         --gray: #00004d;
-        --border: #eff3f4;
+        --border: #292d30;
       }
 
       html {
@@ -57,13 +58,14 @@ const theme = Astro.cookies.get("theme");
         color: var(--foreground);
       }
 
-      * {
-        border: 1px solid red;
+      svg {
+        cursor: auto;
       }
 
-      html,
-      body {
-        height: 100vh;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
     </style>
     <script is:inline>
