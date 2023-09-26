@@ -2,8 +2,14 @@
 import LeftBar from "@/components/LeftBar.astro";
 ---
 
-<div class="grid sm:grid-cols-4 md:grid-cols-7 divide-border">
+<div class="flex justify-center divide-border h-screen">
   <LeftBar />
   <slot />
+  <div
+    class="max-[987px]:hidden flex flex-[0.4] ml-[2%] max-w-[350px] bg-zinc-900"
+  >
+    work in progress
+  </div>
+  <div class="hidden sm:flex flex-[0.1] xl:flex-[0.2]"></div>
   <!-- <LeftBar /> -->
 </div>

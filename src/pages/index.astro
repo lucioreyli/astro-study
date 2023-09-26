@@ -1,15 +1,15 @@
 ---
 import { tweets } from "@/constants/tweets";
-import Card from "@/components/Card.astro";
 import Layout from "@/layouts/Layout.astro";
+import Tweet from "@/components/Tweet.astro";
 ---
 
 <Layout title="Can't say">
-  <main class="sm:col-span-3 md:col-span-4 md:border-r">
+  <main class="flex-1 max-w-[600px] sm:border-r sm:border-border">
     <ul class="space-y-3 px-8">
       {
         tweets.map((i, idx) => (
-          <Card
+          <Tweet
             body={i.tweet}
             href={`${i.user.user}/tweet/${idx + 1}`}
             title={`Tweet ${idx + 1}`}
