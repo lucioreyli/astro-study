@@ -9,4 +9,7 @@ export type Tweet = {
   user: User;
   tweet: string;
   photos: string[];
+  likes: number;
+  replies: string[];
+  retweets: number;
 };

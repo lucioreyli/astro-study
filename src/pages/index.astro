@@ -1,7 +1,7 @@
 ---
 import { tweets } from "@/constants/tweets";
 import Layout from "@/layouts/Layout.astro";
-import Tweet from "@/components/Tweet.astro";
+import TweetItem from "@/components/Tweet.astro";
 ---
 
 <Layout title="Can't say">
@@ -10,7 +10,7 @@ import Tweet from "@/components/Tweet.astro";
       {
         tweets.map((i, idx) => (
           <a href={`${i.user.user}/tweet/${idx + 1}`}>
-            <Tweet
+            <TweetItem
               tweet={i}
               body={i.tweet}
               href={`${i.user.user}/tweet/${idx + 1}`}

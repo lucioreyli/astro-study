@@ -1,4 +1,4 @@
-import type { Tweet } from "../../types";
+import type { Tweet } from "@/types";
 
 export const tweets: Tweet[] = [
   {
@@ -12,5 +12,8 @@ export const tweets: Tweet[] = [
     tweet:
       "Explicação pública: a Poliana, minha namorada atual, não usa calças. Se ela usasse, não seria minha namorada, pois eu não me envolveria com mulher imodesta, que daria mal exemplo às minhas filhas. Minha ex-namorada usava calças, 4 anos atrás; obviamente terminamos. Eis a verdade.",
     photos: ["F6ENAoAWYAEOMmP"],
+    likes: 0,
+    replies: [],
+    retweets: 0,
   },
 ];
