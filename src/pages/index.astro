@@ -7,19 +7,7 @@ import TweetItem from "@/components/Tweet.astro";
 <Layout title="Can't say">
   <main class="flex-1 max-w-[600px] sm:border-r sm:border-border">
     <ul class="space-y-3">
-      {
-        tweets.map((i, idx) => (
-          <a href={`${i.user.user}/tweet/${idx + 1}`}>
-            <TweetItem
-              tweet={i}
-              body={i.tweet}
-              href={`${i.user.user}/tweet/${idx + 1}`}
-              title={`Tweet ${idx + 1}`}
-              images={i.photos}
-            />
-          </a>
-        ))
-      }
+      {tweets.map((i, idx) => <TweetItem index={idx} tweet={i} />)}
     </ul>
   </main>
 </Layout>
