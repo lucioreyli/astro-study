@@ -22,10 +22,15 @@ const viewTweetHref = `/${user.user}/tweet/${index + 1}`;
     />
   </a>
 
-  <div class="col-span-6 pt-4">
-    <h1 transition:name="title">
-      {user.name}
-    </h1>
+  <div class="col-span-6 pt-3">
+    <a class="block w-auto">
+      <h1
+        transition:name="title"
+        class="font-bold leading-relaxed hover:underline cursor-pointer"
+      >
+        {user.name}
+      </h1>
+    </a>
     {
       images.map((img, idx) => (
         <Image
