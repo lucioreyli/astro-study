@@ -9,6 +9,7 @@ type Props = {
 const { tweet, index } = Astro.props;
 const { user, tweet: body, photos: images } = tweet;
 const viewTweetHref = `/${user.user}/tweet/${index + 1}`;
+const userHref = "#"; //`https://x.com/${user.user}`;
 ---
 
 <li class="grid grid-cols-7 bg-background transition-all hover:bg-muted">
@@ -23,13 +24,23 @@ const viewTweetHref = `/${user.user}/tweet/${index + 1}`;
   </a>
 
   <div class="col-span-6 pt-3">
-    <a class="block w-auto">
-      <h1
-        transition:name="title"
-        class="font-bold leading-relaxed hover:underline cursor-pointer"
-      >
-        {user.name}
-      </h1>
+    <div class="w-auto flex text-base gap-1">
+      <a class="flex gap-1" href="#">
+        <h2 transition:name="title" class="font-bold hover:underline">
+          {user.name}
+        </h2>
+        <h2 class="text-muted-foreground">
+          @{user.user}
+        </h2>
+      </a>
+      <span class="block text-muted-foreground">·</span>
+      <span class="block text-muted-foreground">2h</span>
+    </div>
+
+    <a href={viewTweetHref}>
+      <span class="block">
+        {body}
+      </span>
     </a>
     {
       images.map((img, idx) => (
@@ -42,8 +53,5 @@ const viewTweetHref = `/${user.user}/tweet/${index + 1}`;
         />
       ))
     }
-    <span class="block">
-      {body}
-    </span>
   </div>
 </li>

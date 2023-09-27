@@ -14,6 +14,12 @@ module.exports = {
 					foreground: "var(--muted-foreground)",
 					DEFAULT: "var(--muted)"
 				}
+			},
+			fontFamily: {
+				"base": "ChirpRegular",
+				"bold": "ChirpBold",
+				"medium": "ChirpMedium",
+				"heavy": "ChirpHeavy",
 			}
 		},
 	},
