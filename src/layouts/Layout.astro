@@ -16,38 +16,37 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
     <title>{title}</title>
     <Themes />
     <ViewTransitions />
+    <style is:global is:inline>
+      @font-face {
+        font-family: "Chirp";
+        font-weight: 400;
+        font-display: optional;
+        src: url(chirp-regular-web.woff2) format("woff2");
+        font-style: normal;
+      }
+      @font-face {
+        font-display: optional;
+        font-family: "Chirp";
+        font-weight: 500;
+        src: url(chirp-medium-web.woff) format("woff");
+        font-style: normal;
+      }
+      @font-face {
+        font-display: optional;
+        font-family: "Chirp";
+        font-weight: 700;
+        src: url(chirp-bold-web.woff) format("woff");
+        font-style: normal;
+      }
+    </style>
   </head>
   <body>
     <SiteLayout>
       <slot />
     </SiteLayout>
-    <style is:global>
-      @font-face {
-        font-family: "ChirpRegular";
-        src: url("chirp-regular-web.woff") format("woff");
-      }
-      @font-face {
-        font-family: "ChirpMedium";
-        src: url("chirp-medium-web.woff") format("woff");
-      }
-      @font-face {
-        font-family: "ChirpBold";
-        src: url("chirp-bold-web.woff") format("woff");
-      }
-      @font-face {
-        font-family: "ChirpHeavy";
-        src: url("chirp-heavy-web.woff") format("woff");
-      }
-    </style>
     <style is:global is:inline>
       :root {
         --background: #ffffff;
@@ -71,7 +70,7 @@ const { title } = Astro.props;
       }
 
       html {
-        font-family: "Lato", sans-serif;
+        font-family: "Chirp", sans-serif;
         background-color: var(--background);
         color: var(--foreground);
       }
