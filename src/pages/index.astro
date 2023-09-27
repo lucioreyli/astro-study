@@ -9,13 +9,15 @@ import Tweet from "@/components/Tweet.astro";
     <ul class="space-y-3">
       {
         tweets.map((i, idx) => (
-          <Tweet
-            tweet={i}
-            body={i.tweet}
-            href={`${i.user.user}/tweet/${idx + 1}`}
-            title={`Tweet ${idx + 1}`}
-            images={i.photos}
-          />
+          <a href={`${i.user.user}/tweet/${idx + 1}`}>
+            <Tweet
+              tweet={i}
+              body={i.tweet}
+              href={`${i.user.user}/tweet/${idx + 1}`}
+              title={`Tweet ${idx + 1}`}
+              images={i.photos}
+            />
+          </a>
         ))
       }
     </ul>

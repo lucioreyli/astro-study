@@ -3,39 +3,69 @@ import Icon from "@/icons/Icon.astro";
 ---
 
 <aside
-  class="hidden sm:flex flex-1 max-w-[350px] md:flex-[0.14]h-screen overflow-scroll border-r border-border flex-col items-start px-2"
+  class="hidden sm:flex max-w-[350px] md:flex-[0.14]h-screen overflow-scroll border-r border-border flex-col items-start px-4 min-[1265px]:px-14"
 >
-  <button class="rounded-full hover:bg-muted p-3 flex items-center gap-4">
+  <button
+    class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
+  >
     <Icon name="x" class="w-7 h-7" />
   </button>
-  <button class="rounded-full hover:bg-muted p-3 flex items-center gap-4">
+  <button
+    class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
+  >
     <Icon name="home" class="w-7 h-7" />
-    <span class="font-bold text-xl">Home</span>
+    <span class="font-medium text-xl hidden min-[1265px]:block">Home</span>
   </button>
-  <button class="rounded-full hover:bg-muted p-3 flex items-center gap-4">
+  <button
+    class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
+  >
     <Icon name="search" class="w-7 h-7" />
-    <span class="font-bold text-xl">Explore</span>
+    <span class="font-medium text-xl hidden min-[1265px]:block">Explore</span>
   </button>
-  <button class="rounded-full hover:bg-muted p-3 flex items-center gap-4">
+  <button
+    class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
+  >
     <Icon name="bell" class="w-7 h-7" />
-    <span class="font-bold text-xl">Notifications</span>
+    <span class="font-medium text-xl hidden min-[1265px]:block"
+      >Notifications</span
+    >
   </button>
-  <button class="rounded-full hover:bg-muted p-3 flex items-center gap-4">
+  <button
+    class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
+  >
     <Icon name="mail" class="w-7 h-7" />
+    <span class="font-medium text-xl hidden min-[1265px]:block">Messages</span>
   </button>
-  <button class="rounded-full hover:bg-muted p-3 flex items-center gap-4">
+  <button
+    class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
+  >
     <Icon name="list" class="w-7 h-7" />
+    <span class="font-medium text-xl hidden min-[1265px]:block">Lists</span>
   </button>
-  <button class="rounded-full hover:bg-muted p-3 flex items-center gap-4">
+  <button
+    class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
+  >
     <Icon name="people" class="w-7 h-7" />
+    <span class="font-medium text-xl hidden min-[1265px]:block"
+      >Communities</span
+    >
   </button>
-  <button class="rounded-full hover:bg-muted p-3 flex items-center gap-4">
+  <button
+    class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
+  >
     <Icon name="x" class="w-7 h-7" />
+    <span class="font-medium text-xl hidden min-[1265px]:block">Premium</span>
   </button>
-  <button class="rounded-full hover:bg-muted p-3 flex items-center gap-4">
+  <button
+    class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
+  >
     <Icon name="person" class="w-7 h-7" />
+    <span class="font-medium text-xl hidden min-[1265px]:block">Profile</span>
   </button>
-  <button class="rounded-full hover:bg-muted p-3 flex items-center gap-4">
+  <button
+    class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
+  >
     <Icon name="more" class="w-7 h-7" />
+    <span class="font-medium text-xl hidden min-[1265px]:block">More</span>
   </button>
 </aside>

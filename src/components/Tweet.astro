@@ -13,12 +13,18 @@ const { title, body, images, tweet } = Astro.props;
 const { user } = tweet;
 ---
 
-<li class="grid grid-cols-7 bg-background transition-all hover:bg-muted p-4">
-  <div class="bg-zinc-900">
-    <Image width="80" height="80" src={user.photo} alt="user photo" />
+<li class="grid grid-cols-7 bg-background transition-all hover:bg-muted">
+  <div class="bg-zinc-900 pt-4">
+    <Image
+      width="40"
+      height="40"
+      src={user.photo}
+      alt="user photo"
+      class="rounded-full mx-auto"
+    />
   </div>
 
-  <div class="col-span-6">
+  <div class="col-span-6 pt-4">
     <h1 transition:name="title">
       {title}
     </h1>
