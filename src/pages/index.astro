@@ -6,10 +6,11 @@ import Tweet from "@/components/Tweet.astro";
 
 <Layout title="Can't say">
   <main class="flex-1 max-w-[600px] sm:border-r sm:border-border">
-    <ul class="space-y-3 px-8">
+    <ul class="space-y-3">
       {
         tweets.map((i, idx) => (
           <Tweet
+            tweet={i}
             body={i.tweet}
             href={`${i.user.user}/tweet/${idx + 1}`}
             title={`Tweet ${idx + 1}`}

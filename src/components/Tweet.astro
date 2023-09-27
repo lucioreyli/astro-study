@@ -1,26 +1,40 @@
 ---
 import { Image } from "astro:assets";
-type Props = { title: string; body: string; href: string; images: string[] };
+import type { Tweet } from "types";
+type Props = {
+  title: string;
+  body: string;
+  href: string;
+  images: string[];
+  tweet: Tweet;
+};
 
-const { title, body, images } = Astro.props;
+const { title, body, images, tweet } = Astro.props;
+const { user } = tweet;
 ---
 
-<li class="w-full block bg-background transition-all hover:bg-muted">
-  <h1 transition:name="title">
-    {title}
-  </h1>
-  {
-    images.map((img, idx) => (
-      <Image
-        transition:name={`img-${idx}`}
-        src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
-        width="130"
-        height="130"
-        alt="tweet image"
-      />
-    ))
-  }
-  <span class="block">
-    {body}
-  </span>
+<li class="grid grid-cols-7 bg-background transition-all hover:bg-muted p-4">
+  <div class="bg-zinc-900">
+    <Image width="80" height="80" src={user.photo} alt="user photo" />
+  </div>
+
+  <div class="col-span-6">
+    <h1 transition:name="title">
+      {title}
+    </h1>
+    {
+      images.map((img, idx) => (
+        <Image
+          transition:name={`img-${idx}`}
+          src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
+          width="130"
+          height="130"
+          alt="tweet image"
+        />
+      ))
+    }
+    <span class="block">
+      {body}
+    </span>
+  </div>
 </li>
