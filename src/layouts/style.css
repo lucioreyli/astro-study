@@ -5,6 +5,7 @@
   src: url(chirp-regular-web.woff2) format("woff2");
   font-style: normal;
 }
+
 @font-face {
   font-display: block;
   font-family: "Chirp";
@@ -12,6 +13,7 @@
   src: url(chirp-medium-web.woff2) format("woff2");
   font-style: normal;
 }
+
 @font-face {
   font-display: block;
   font-family: "Chirp";
