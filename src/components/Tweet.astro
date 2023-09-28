@@ -26,7 +26,7 @@ const userHref = "#"; //`https://x.com/${user.user}`;
   <div class="col-span-6 pt-3">
     <div class="w-auto flex text-base gap-1">
       <a class="flex gap-1" href="#">
-        <h2 transition:name="title" class="font-bold hover:underline">
+        <h2 transition:name="username" class="font-bold hover:underline">
           {user.name}
         </h2>
         <h2 class="text-muted-foreground">
@@ -38,20 +38,23 @@ const userHref = "#"; //`https://x.com/${user.user}`;
     </div>
 
     <a href={viewTweetHref}>
-      <span class="block">
+      <p class="block text-base pr-4 leading-5">
         {body}
-      </span>
+      </p>
     </a>
-    {
-      images.map((img, idx) => (
-        <Image
-          transition:name={`img-${idx}`}
-          src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
-          width="130"
-          height="130"
-          alt="tweet image"
-        />
-      ))
-    }
+    <div class="grid grid-rows-2">
+      {
+        images.map((img, idx) => (
+          <Image
+            transition:name={`img-${idx}`}
+            src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
+            width="130"
+            height="130"
+            alt="tweet image"
+            class="rounded-md border border-border"
+          />
+        ))
+      }
+    </div>
   </div>
 </li>
