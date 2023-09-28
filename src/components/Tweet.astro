@@ -1,10 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import type { Tweet } from "@/types";
-type Props = {
-  tweet: Tweet;
-  index: number;
-};
+
+type Props = { tweet: Tweet; index: number };
 
 const { tweet, index } = Astro.props;
 const { user, tweet: body, photos: images } = tweet;
