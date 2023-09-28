@@ -2,7 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import Themes from "astro-themes";
 import SiteLayout from "./SiteLayout.astro";
-import "./style.css";
+// import "./style.css";
 
 type Props = { title: string };
 
@@ -15,9 +15,55 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
+    <link
+      rel="preload"
+      href="/Chirp-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/Chirp-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/Chirp-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <style is:global>
+      @font-face {
+        font-family: "Chirp";
+        src: url("/Chirp-Regular.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Chirp";
+        font-weight: 500;
+        src: url("/Chirp-Medium.woff2") format("woff2");
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Chirp";
+        font-weight: 700;
+        src: url("/Chirp-Bold.woff2") format("woff2");
+        font-style: normal;
+      }
+
+      body {
+        font-family: "Chirp";
+      }
+    </style>
+    <link rel="stylesheet" href="/style.css" />
     <title>{title}</title>
+    <meta name="generator" content={Astro.generator} />
     <Themes />
     <ViewTransitions />
   </head>
@@ -25,6 +71,7 @@ const { title } = Astro.props;
     <SiteLayout>
       <slot />
     </SiteLayout>
+
     <script is:inline>
       document.addEventListener("astro:after-swap", () =>
         document.dispatchEvent(new CustomEvent("set-theme")),

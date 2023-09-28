@@ -2,6 +2,7 @@
 import Icon from "@/icons/Icon.astro";
 
 const currentPath = Astro.url.pathname;
+const isHome = currentPath === "/";
 ---
 
 <aside
@@ -14,9 +15,9 @@ const currentPath = Astro.url.pathname;
     href="/"
     class="rounded-full hover:bg-muted p-3 flex items-center gap-4 min-[1265px]:pr-8"
   >
-    <Icon name="home" class="w-7 h-7" />
+    <Icon name={isHome ? "home-filled" : "home"} class="w-7 h-7" />
     <span
-      data-selected={currentPath === "/"}
+      data-selected={isHome}
       class="data-[selected]:font-bold text-xl hidden min-[1265px]:block"
       >Home</span
     >
