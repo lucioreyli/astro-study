@@ -10,7 +10,9 @@ const viewTweetHref = `/${user.user}/tweet/${index + 1}`;
 const userHref = "#"; //`https://x.com/${user.user}`;
 ---
 
-<li class="grid grid-cols-10 bg-background transition-all hover:bg-muted">
+<li
+  class="grid grid-cols-8 bg-background transition-all hover:bg-muted border-b border-border"
+>
   <a href={viewTweetHref} class="pt-4">
     <Image
       width="40"
@@ -21,7 +23,7 @@ const userHref = "#"; //`https://x.com/${user.user}`;
     />
   </a>
 
-  <div class="col-span-9 pt-3">
+  <div class="col-span-7 pt-3">
     <div class="w-auto flex text-base gap-1">
       <a class="flex gap-1" href="#">
         <h2 transition:name="username" class="font-bold hover:underline">
@@ -42,7 +44,7 @@ const userHref = "#"; //`https://x.com/${user.user}`;
         {body}
       </p>
     </a>
-    <div class="grid grid-cols-2">
+    <div class="flex">
       {
         images.map((img, idx) => (
           <Image
@@ -51,10 +53,12 @@ const userHref = "#"; //`https://x.com/${user.user}`;
             width="130"
             height="130"
             alt="tweet image"
-            class="rounded-md border border-border w-full"
+            class="rounded-md border border-border flex-1"
           />
         ))
       }
+      <a href={viewTweetHref} class="w-4 block"></a>
     </div>
+    <a href={viewTweetHref} class="h-6 block"></a>
   </div>
 </li>
