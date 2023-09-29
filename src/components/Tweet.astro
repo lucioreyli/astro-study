@@ -1,11 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import type { Tweet } from "@/types";
+import Icon from "@/icons/Icon.astro";
 
 type Props = { tweet: Tweet; index: number };
 
-const { tweet, index } = Astro.props;
-const { user, tweet: body, photos: images } = tweet;
+const {
+  tweet: { user, tweet: body, photos: images },
+  index,
+} = Astro.props;
 const viewTweetHref = `/${user.user}/tweet/${index + 1}`;
 const userHref = "#"; //`https://x.com/${user.user}`;
 ---
@@ -40,7 +43,7 @@ const userHref = "#"; //`https://x.com/${user.user}`;
     </div>
 
     <a href={viewTweetHref}>
-      <p class="block text-base pr-4 leading-5">
+      <p class="block text-base pr-4 pb-4 leading-5">
         {body}
       </p>
     </a>
@@ -59,6 +62,16 @@ const userHref = "#"; //`https://x.com/${user.user}`;
       }
       <a href={viewTweetHref} class="w-4 block"></a>
     </div>
-    <a href={viewTweetHref} class="h-6 block"></a>
+    <a href={viewTweetHref} class="flex py-4 pr-4 items-center justify-between">
+      <Icon name="like" class="h-[18.5px] w-[18.5px] text-muted-foreground" />
+      <Icon name="reply" class="h-[18.5px] w-[18.5px] text-muted-foreground" />
+      <button class="flex text-muted justify-center items-center gap-2">
+        <Icon
+          name="retweet"
+          class="h-[18.5px] w-[18.5px] text-muted-foreground"
+        />
+        <span>2</span>
+      </button>
+    </a>
   </div>
 </li>
