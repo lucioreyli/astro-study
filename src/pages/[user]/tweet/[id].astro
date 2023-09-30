@@ -12,17 +12,17 @@ const tweet = tweets[_idx - 1];
 if (!tweet) return Astro.redirect("/");
 
 const { id, photos: images, user } = tweet;
+console.log(id);
 ---
 
 <Layout title="Tweet">
   <main class="m-auto p-4 w-[800px] max-w-[calc(100% - 2rem)] text-xl">
     <h1>Tweet {id}</h1>
-    <div>
+    <div transition:name={`${id}img`} transition:animate="slide">
       {
         images.map((img, idx) => (
           <Image
             src={`https://pbs.twimg.com/media/${img}?format=webp&name=large`}
-            transition:name={`${id}img`}
             width="400"
             height="400"
             alt="tweet image"

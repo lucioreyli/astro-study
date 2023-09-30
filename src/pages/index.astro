@@ -4,7 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 import TweetItem from "@/components/Tweet.astro";
 ---
 
-<Layout title="Can't say">
+<Layout title="X / Home">
   <main class="flex-1 max-w-[600px] sm:border-r sm:border-border">
     <ul class="divide-y divide-border">
       {tweets.map((i, idx) => <TweetItem index={idx} tweet={i} />)}
