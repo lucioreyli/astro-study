@@ -6,8 +6,9 @@ import TweetItem from "@/components/Tweet.astro";
 
 <Layout title="Can't say">
   <main class="flex-1 max-w-[600px] sm:border-r sm:border-border">
-    <ul class="space-y-3">
+    <ul class="divide-y divide-border">
       {tweets.map((i, idx) => <TweetItem index={idx} tweet={i} />)}
     </ul>
   </main>
 </Layout>
+<script></script>

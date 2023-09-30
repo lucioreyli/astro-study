@@ -1,6 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import Themes from "astro-themes";
+// import Themes from "astro-themes";
 import SiteLayout from "./SiteLayout.astro";
 // import "./style.css";
 
@@ -10,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -64,7 +64,7 @@ const { title } = Astro.props;
     <link rel="stylesheet" href="/style.css" />
     <title>{title}</title>
     <meta name="generator" content={Astro.generator} />
-    <Themes />
+    <!-- <Themes /> -->
     <ViewTransitions />
   </head>
   <body>
@@ -72,10 +72,10 @@ const { title } = Astro.props;
       <slot />
     </SiteLayout>
 
-    <script is:inline>
+    <!-- <script is:inline>
       document.addEventListener("astro:after-swap", () =>
         document.dispatchEvent(new CustomEvent("set-theme")),
       );
-    </script>
+    </script> -->
   </body>
 </html>

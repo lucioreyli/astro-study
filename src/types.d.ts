@@ -6,6 +6,7 @@ export type User = {
 };
 
 export type Tweet = {
+  id: `${number}`;
   user: User;
   tweet: string;
   photos: string[];
