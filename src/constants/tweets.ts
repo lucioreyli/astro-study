@@ -16,21 +16,21 @@ export const tweets: Tweet[] = [
     replies: new Array(9).fill(null),
     retweets: 125,
   },
-  {
-    id: "1705988408198263092",
-    user: {
-      name: "Biki Nice",
-      user: "Biki_Nice",
-      verified: false,
-      photo:
-        "https://pbs.twimg.com/profile_images/1425764885548478464/epXzwP6f_400x400.jpg",
-    },
-    tweet: `Grogu on the verge of crying when Din took the decision to adopt him 😭\n\nDin Grogu 🥲`,
-    photos: ["F6zjab-WAAATaJe"],
-    likes: 0,
-    replies: [],
-    retweets: 0,
-  },
+  // {
+  //   id: "1705988408198263092",
+  //   user: {
+  //     name: "Biki Nice",
+  //     user: "Biki_Nice",
+  //     verified: false,
+  //     photo:
+  //       "https://pbs.twimg.com/profile_images/1425764885548478464/epXzwP6f_400x400.jpg",
+  //   },
+  //   tweet: `Grogu on the verge of crying when Din took the decision to adopt him 😭\n\nDin Grogu 🥲`,
+  //   photos: ["F6zjab-WAAATaJe"],
+  //   likes: 0,
+  //   replies: [],
+  //   retweets: 0,
+  // },
   // {
   //   id: "1702657504352620942",
   //   user: {

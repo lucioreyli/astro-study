@@ -11,7 +11,7 @@ const {
 } = Astro.props;
 const viewTweetHref = `/${user.user}/tweet/${index + 1}`;
 const userHref = "#"; //`https://x.com/${user.user}`;
-//class="rounded-md aspect-auto border border-border w-auto transition ease-in-out duration-150"
+//class="rounded-md aspect-auto border border-border w-auto"
 ---
 
 <li class="grid grid-cols-8 bg-background hover:bg-muted">
@@ -50,13 +50,12 @@ const userHref = "#"; //`https://x.com/${user.user}`;
       {
         images.map((img, idx) => (
           <Image
-            transition:name={`${id}img`}
-            transition:persist
+            transition:name={id}
             src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
             width="130"
             height="130"
             alt="tweet image"
-            class="rounded-md aspect-square border border-border transition ease-in-out duration-150"
+            class="rounded-md aspect-square border border-border"
           />
         ))
       }
