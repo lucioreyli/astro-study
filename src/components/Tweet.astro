@@ -50,7 +50,7 @@ const userHref = "#"; //`https://x.com/${user.user}`;
       {
         images.map((img, idx) => (
           <Image
-            transition:name={id}
+            transition:name={`img${index}${idx}`}
             src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
             width="130"
             height="130"

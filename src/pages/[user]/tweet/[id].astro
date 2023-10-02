@@ -8,7 +8,8 @@ import { Image } from "astro:assets";
 const res = parseUrl.safeParse(Astro.params);
 if (!res.success) return Astro.redirect("/");
 const { id: _idx } = res.data;
-const tweet = tweets[_idx - 1];
+const tweetIndex = _idx - 1;
+const tweet = tweets[tweetIndex];
 if (!tweet) return Astro.redirect("/");
 
 const { id, photos: images, user } = tweet;
@@ -22,7 +23,7 @@ const transitionName = id + "img";
       {
         images.map((img, idx) => (
           <Image
-            transition:name={id}
+            transition:name={`img${tweetIndex}${idx}`}
             src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
             width="400"
             height="400"
