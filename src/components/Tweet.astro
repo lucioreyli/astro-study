@@ -28,8 +28,13 @@ const userHref = "#"; //`https://x.com/${user.user}`;
   <div class="col-span-7 pt-3">
     <div class="w-auto flex text-base gap-1">
       <a class="flex gap-1" href="#">
-        <h2 class="font-bold hover:underline">
+        <h2 class="font-bold hover:underline flex items-center text-center">
           {user.name}
+          {
+            user.verified && (
+              <Icon name="verified" class="w-5 h-5 ml-1 text-accent-blue" />
+            )
+          }
         </h2>
         <h2 class="text-muted-foreground">
           @{user.user}
@@ -46,7 +51,7 @@ const userHref = "#"; //`https://x.com/${user.user}`;
         {body}
       </p>
     </a>
-    <div>
+    <div class="flex">
       {
         images.map((img, idx) => (
           <Image
@@ -55,35 +60,48 @@ const userHref = "#"; //`https://x.com/${user.user}`;
             width="130"
             height="130"
             alt="tweet image"
-            class="rounded-md aspect-square border border-border"
+            class="rounded-md  border border-border w-[calc(100%-1rem)]"
           />
         ))
       }
-      <!-- <div class="bg-red-500 w-full"></div> -->
       <div>
-        <a href={viewTweetHref} class="w-4 block bg-red-500"></a>
+        <a href={viewTweetHref} class="w-4 h-full block"></a>
       </div>
     </div>
     <a
       href={viewTweetHref}
       class="flex py-3 pr-4 items-center justify-between text-sm text-muted-foreground"
     >
-      <button class="flex justify-center items-center gap-2">
+      <button
+        aria-label="replies"
+        class="group flex justify-center items-center gap-2 hover:text-red-500 p-1"
+      >
         <Icon name="reply" class="h-[18.5px] w-[18.5px]" />
       </button>
-      <button class="flex justify-center items-center gap-2">
+      <button
+        aria-label="retweets"
+        class="flex justify-center items-center gap-2"
+      >
         <Icon name="retweet" class="h-[18.5px] w-[18.5px]" />
         <span>2</span>
       </button>
-      <button class="flex justify-center items-center gap-2">
+      <button aria-label="likes" class="flex justify-center items-center gap-2">
         <Icon name="like" class="h-[18.5px] w-[18.5px]" />
         <span>13</span>
       </button>
-      <button class="flex justify-center items-center gap-2">
+      <button
+        aria-label="engagement"
+        class="flex justify-center items-center gap-2"
+      >
         <Icon name="stats" class="h-[18.5px] w-[18.5px]" />
         <span>13</span>
       </button>
-      <button class="flex justify-center items-center gap-2">
+      <button
+        id={`share-btn-${index}`}
+        aria-label="share"
+        class="flex justify-center items-center gap-2"
+        transition:animate="none"
+      >
         <Icon name="share" class="h-[18.5px] w-[18.5px]" />
       </button>
     </a>
