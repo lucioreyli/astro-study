@@ -5,17 +5,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        gray: "var(--gray)",
-        border: "var(--border)",
-        foreground: "var(--foreground)",
-        primary: "var(--primary)",
+        background: "rgb(var(--background) / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
+        border: "rgb(var(--border) / <alpha-value>)",
+        primary: "rgb(var(--primary) / <alpha-value>)",
         muted: {
-          foreground: "var(--muted-foreground)",
-          DEFAULT: "var(--muted)",
+          foreground: "rgb(var(--muted-foreground) / <alpha-value>)",
+          blue: "rgb(var(--muted-blue) / <alpha-value>)",
+          green: "rgb(var(--muted-green) / <alpha-value>)",
+          red: "rgb(var(--muted-red) / <alpha-value>)",
+          DEFAULT: "rgb(var(--muted) / <alpha-value>)",
         },
         accent: {
-          blue: "var(--accent-blue)",
+          blue: "rgb(var(--accent-blue) / <alpha-value>)",
+          green: "rgb(var(--accent-green) / <alpha-value>)",
+          red: "rgb(var(--accent-red) / <alpha-value>)",
         },
       },
     },
