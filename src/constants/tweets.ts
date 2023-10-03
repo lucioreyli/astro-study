@@ -38,9 +38,10 @@ export const tweets: Tweet[] = [
       user: "theapplehub",
       verified: true,
       photo:
-        "https://pbs.twimg.com/profile_images/1425764885548478464/epXzwP6f_400x400.jpg",
+        "https://pbs.twimg.com/profile_images/1521011653222932481/S1BEvjDb_400x400.jpg",
     },
-    tweet: `Grogu on the verge of crying when Din took the decision to adopt him 😭\n\nDin Grogu 🥲`,
+    tweet:
+      "Not impressed with the iPhone 15 Pro Max battery life so far. I usually have to charge it twice a day...\n\nDefinitely an upgrade coming from an iPhone 14 Pro but was hoping for better",
     photos: ["F7fHJbwbEAAzzG1"],
     likes: 881,
     replies: new Array(581).fill(null),
