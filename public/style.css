@@ -4,12 +4,10 @@
 
   --muted: 245 245 245;
   --muted-foreground: 101 107 111;
-  --muted-blue: 2 22 28;
-  --muted-green: 221 247 238;
-  --muted-red: 2 22 28;
 
   --border: 232 239 240;
 
+  /* same colors both themes */
   --accent-blue: 0 147 233;
   --accent-green: 0 179 116;
   --accent-red: 255 0 115;
@@ -24,9 +22,6 @@
 
   --muted: 15 15 15;
   --muted-foreground: 101 107 111;
-  --muted-blue: #06161f;
-  --muted-green: #06161f;
-  --muted-red: #06161f;
 
   --border: 36 40 42;
 }
