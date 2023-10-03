@@ -4,7 +4,9 @@ import LeftBar from "@/components/LeftBar.astro";
 
 <div class="flex justify-center divide-border">
   <LeftBar />
-  <slot />
+  <div>
+    <slot />
+  </div>
   <div
     class="max-[987px]:hidden flex flex-[0.4] ml-[2%] max-w-[350px] bg-zinc-900"
   >

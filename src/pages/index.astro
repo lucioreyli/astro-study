@@ -1,14 +1,28 @@
 ---
 import { tweets } from "@/constants/tweets";
 import Layout from "@/layouts/Layout.astro";
+import SiteLayout from "@/layouts/SiteLayout.astro";
 import TweetItem from "@/components/Tweet.astro";
+import Tabs from "@/components/Tabs.astro";
+
+const items = [
+  { label: "For you", value: "for-you" },
+  { label: "Following", value: "follow" },
+] as { label: string; value: any }[];
 ---
 
 <Layout title="X / Home">
-  <main class="flex-1 max-w-[600px] sm:border-r sm:border-border">
-    <ul class="divide-y divide-border">
-      {tweets.map((i, idx) => <TweetItem index={idx} tweet={i} />)}
-    </ul>
-  </main>
+  <SiteLayout>
+    <div
+      class="sticky top-0 z-10 border-b border-border backdrop-blur-md bg-background/40"
+    >
+      <h1 class="p-4 font-bold text-xl">Home</h1>
+      <Tabs items={items} />
+    </div>
+    <main class="flex-1 max-w-[600px] sm:border-r sm:border-border">
+      <ul class="divide-y divide-border">
+        {tweets.map((i, idx) => <TweetItem index={idx} tweet={i} />)}
+      </ul>
+    </main>
+  </SiteLayout>
 </Layout>
-<script></script>

@@ -68,9 +68,7 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
-    <SiteLayout>
-      <slot />
-    </SiteLayout>
+    <slot />
     <script>
       document.addEventListener("astro:after-swap", () =>
         document.dispatchEvent(new CustomEvent("set-theme")),

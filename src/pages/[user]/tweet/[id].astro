@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { parseUrl } from "./parse-url";
 import { tweets } from "@/constants/tweets";
 import { Image } from "astro:assets";
+import SiteLayout from "@/layouts/SiteLayout.astro";
 
 // checks if tweet exists
 const res = parseUrl.safeParse(Astro.params);
@@ -17,20 +18,22 @@ const transitionName = id + "img";
 ---
 
 <Layout title="Tweet">
-  <main class="m-auto p-4 w-[800px] max-w-[calc(100% - 2rem)] text-xl">
-    <h1>Tweet {id}</h1>
-    <div>
-      {
-        images.map((img, idx) => (
-          <Image
-            transition:name={`img${tweetIndex}${idx}`}
-            src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
-            width="400"
-            height="400"
-            alt="tweet image"
-          />
-        ))
-      }
-    </div>
-  </main>
+  <SiteLayout>
+    <main class="m-auto p-4 w-[800px] max-w-[calc(100% - 2rem)] text-xl">
+      <h1>Tweet {id}</h1>
+      <div>
+        {
+          images.map((img, idx) => (
+            <Image
+              transition:name={`img${tweetIndex}${idx}`}
+              src={`https://pbs.twimg.com/media/${img}?format=webp&name=small`}
+              width="400"
+              height="400"
+              alt="tweet image"
+            />
+          ))
+        }
+      </div>
+    </main>
+  </SiteLayout>
 </Layout>

@@ -1,0 +1,28 @@
+---
+type Props = {
+  items: { value: any; label: string }[];
+  //   onChange: (val: any) => void;
+};
+const { items } = Astro.props;
+---
+
+<div class="grid grid-cols-2">
+  {
+    items.map((item, index) => {
+      const dataActive = index === 0;
+      return (
+        <button
+          data-active={dataActive}
+          class="px-8 flex justify-center hover:bg-muted transition-colors"
+        >
+          <div>
+            <span data-active={dataActive} class="font-medium block my-2">
+              {item.label}
+            </span>
+            <div class="bg-primary rounded-full h-1 w-auto" />
+          </div>
+        </button>
+      );
+    })
+  }
+</div>
