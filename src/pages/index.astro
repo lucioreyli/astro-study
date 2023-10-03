@@ -15,11 +15,12 @@ const items = [
   <SiteLayout>
     <div
       class="sticky top-0 z-10 border-b border-border backdrop-blur-md bg-background/40"
+      transition-persist
     >
       <h1 class="p-4 font-bold text-xl">Home</h1>
       <Tabs items={items} />
     </div>
-    <main class="flex-1 max-w-[600px] sm:border-r sm:border-border">
+    <main class="flex-1 max-w-[600px]">
       <ul class="divide-y divide-border">
         {tweets.map((i, idx) => <TweetItem index={idx} tweet={i} />)}
       </ul>

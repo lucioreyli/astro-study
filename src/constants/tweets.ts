@@ -31,4 +31,19 @@ export const tweets: Tweet[] = [
     replies: [],
     retweets: 0,
   },
+  {
+    id: "1709053552302477784",
+    user: {
+      name: "Apple Hub",
+      user: "theapplehub",
+      verified: true,
+      photo:
+        "https://pbs.twimg.com/profile_images/1425764885548478464/epXzwP6f_400x400.jpg",
+    },
+    tweet: `Grogu on the verge of crying when Din took the decision to adopt him 😭\n\nDin Grogu 🥲`,
+    photos: ["F7fHJbwbEAAzzG1"],
+    likes: 881,
+    replies: new Array(581).fill(null),
+    retweets: 529,
+  },
 ];

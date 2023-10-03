@@ -2,15 +2,14 @@
 import LeftBar from "@/components/LeftBar.astro";
 ---
 
-<div class="flex justify-center divide-border">
-  <LeftBar />
-  <div>
+<div class="flex justify-center divide-x divide-border">
+  <LeftBar transition:persist />
+  <div class="border-r border-solid border-red-500">
     <slot />
   </div>
   <div
-    class="max-[987px]:hidden flex flex-[0.4] ml-[2%] max-w-[350px] bg-zinc-900"
+    class="max-[987px]:hidden w-full p-4 max-w-[350px] block sticky top-0 h-screen overflow-scroll"
   >
-    work in progress
+    <span class="block w-full">🚧 work in progress</span>
   </div>
-  <div class="hidden sm:flex flex-[0.1] xl:flex-[0.2]"></div>
 </div>
