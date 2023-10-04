@@ -14,7 +14,6 @@ const tweet = tweets[tweetIndex];
 if (!tweet) return Astro.redirect("/");
 
 const { id, photos: images, user } = tweet;
-const transitionName = id + "img";
 ---
 
 <Layout title="Tweet">
